@@ -14,7 +14,7 @@ Do pliku composer.json należy dodać do sekcji `repositories`
 Następnie w tym samym pliku w sekcji `require`
 
 ```bash
-    "mlp/php": "^1.0"
+    "mlp/php": "^1.1"
 ```
 Po dodaniu powyższych linii należy użyć komendy `composer install`
 
