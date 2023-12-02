@@ -14,7 +14,7 @@ Do pliku composer.json należy dodać do sekcji `repositories`
 Następnie w tym samym pliku w sekcji `require`
 
 ```bash
-    "vendor/my-private-repo": "dev-master"
+    "vendor/php-mlp": "dev-master"
 ```
 Po dodaniu powyższych linii należy użyć komendy `composer install`
 
