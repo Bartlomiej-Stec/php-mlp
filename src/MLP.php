@@ -113,15 +113,15 @@ class MLP extends NNet
         $this->x = $data['x'];
     }
 
-    public function loadSavedModel(string $name = 'example'): void
+    public function loadSavedModel(string $path = 'example.json'): void
     {
-        $data = json_decode(file_get_contents(__DIR__ . '/models/' . $name . '.json'), true);
+        $data = json_decode(file_get_contents($path), true);
         $this->loadModel($data);
     }
 
-    public function saveModel(string $name = 'example'): void
+    public function saveModel(string $path = 'example.json'): void
     {
-        file_put_contents(__DIR__ . '/models/' . $name . '.json', json_encode($this->getModel(), JSON_PRETTY_PRINT));
+        file_put_contents($path, json_encode($this->getModel(), JSON_PRETTY_PRINT));
 
     }
 

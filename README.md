@@ -86,7 +86,7 @@ W procesie uczenia można zastosować walidację krzyżową korzystając z metod
 
 W wyniku metoda zwraca średnie PK (poprawność klasyfikacji) w procentach.
 
-Parametry nauczonego modelu sieci takie jak np. wagi, biasy można zapisać na dysku stosując metodę `saveModel`. Jako argument można podać nazwę pliku. Zapisane modele znajdują się w folderze `models`. Można również skorzystać z metody `getModel`, aby pobrać parametry i zapisać je w inny sposób.
+Parametry nauczonego modelu sieci takie jak np. wagi, biasy można zapisać na dysku stosując metodę `saveModel`. Jako argument można podać lokalizację pliku. Można również skorzystać z metody `getModel`, aby pobrać parametry i zapisać je w inny sposób.
 
 Aby załadować parametry modelu z dysku można skorzystać z metody `loadSavedModel` podając nazwę zapisanego wcześniej modelu lub podać parametry modelu do metody `loadModel`. W obu przypadkach zainicjowane losowymi wartościami wagi oraz biasy zostaną zastąpione podanymi wartościami.
 
