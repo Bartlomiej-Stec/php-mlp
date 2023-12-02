@@ -1,0 +1,17 @@
+{
+    "name": "mlp/php",
+    "description": "PHP MLP Neural Network",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "NeuralNetwork\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bartomiej Stec",
+            "email": "itscriptcoding@gmail.com"
+        }
+    ],
+    "require": {}
+}
