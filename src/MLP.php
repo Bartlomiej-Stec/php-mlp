@@ -49,7 +49,7 @@ class MLP extends NNet
         $this->SSE = 0;
     }
 
-    public function __construct(int $l_input, int $max_epoch = 1000, int $K1 = 8, int $K2 = 6, int $K3_output = 1, float $lr = 0.00001, float $err_goal = 0.1, float $mc = 0.7, float $ksi_inc = 1.05, float $ksi_dec = 0.7, float $er = 1.04)
+    public function __construct(int $l_input=1, int $max_epoch = 1000, int $K1 = 8, int $K2 = 6, int $K3_output = 1, float $lr = 0.00001, float $err_goal = 0.1, float $mc = 0.7, float $ksi_inc = 1.05, float $ksi_dec = 0.7, float $er = 1.04)
     {
         $this->lr = $lr;
         $this->err_goal = $err_goal;
@@ -98,7 +98,18 @@ class MLP extends NNet
             'b2' => $this->b2,
             'w3' => $this->w3,
             'b3' => $this->b3,
-            'x' => $this->x
+            'x' => $this->x,
+            'k1' => $this->K1,
+            'k2' => $this->K2,
+            'k3' => $this->K3,
+            'l' => $this->L,
+            'lr' => $this->lr,
+            'err_goal' => $this->err_goal,
+            'ksi_inc' => $this->ksi_inc,
+            'ksi_dec' => $this->ksi_dec,
+            'er' => $this->er,
+            'max_epoch' => $this->max_epoch,
+            'mc' => $this->mc
         ];
     }
 
@@ -111,6 +122,17 @@ class MLP extends NNet
         $this->w3 = $data['w3'];
         $this->b3 = $data['b3'];
         $this->x = $data['x'];
+        $this->K1 = $data['k1'];
+        $this->K2 = $data['k2'];
+        $this->K3 = $data['k3'];
+        $this->L = $data['l'];
+        $this->lr = $data['lr'];
+        $this->err_goal = $data['err_goal'];
+        $this->ksi_inc = $data['ksi_inc'];
+        $this->ksi_dec = $data['ksi_dec'];
+        $this->er = $data['er'];
+        $this->max_epoch = $data['max_epoch'];
+        $this->mc = $data['mc'];
     }
 
     public function loadSavedModel(string $path = 'example.json'): void

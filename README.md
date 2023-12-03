@@ -14,7 +14,7 @@ Do pliku composer.json należy dodać do sekcji `repositories`
 Następnie w tym samym pliku w sekcji `require`
 
 ```bash
-    "mlp/php": "^1.1"
+    "mlp/php": "^1.2"
 ```
 Po dodaniu powyższych linii należy użyć komendy `composer install`
 
@@ -34,7 +34,7 @@ Biblioteka posiada 2 główne klasy: `MLP` oraz `Optimizer`. Ta druga służy je
 ```
 | Paramter | Typ     | Opis                |
 | :-------- | :------- | :------------------------- |
-| `l_input` | `int` | **Wymagane**. Liczba cech  |
+| `l_input` | `int` | Liczba cech  |
 | `max_epoch` | `int` | Maksymalna liczba iteracji  |
 | `K1` | `int` | Liczba neuronów w pierwszej warstwie ukrytej  |
 | `K2` | `int` | Liczba neuronów w drugiej warstwie ukrytej  |
