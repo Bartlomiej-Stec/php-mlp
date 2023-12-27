@@ -49,7 +49,7 @@ class MLP extends NNet
         $this->SSE = 0;
     }
 
-    public function __construct(int $l_input=1, int $max_epoch = 1000, int $K1 = 8, int $K2 = 6, int $K3_output = 1, float $lr = 0.00001, float $err_goal = 0.1, float $mc = 0.7, float $ksi_inc = 1.05, float $ksi_dec = 0.7, float $er = 1.04)
+    public function __construct(int $l_input = 1, int $max_epoch = 1000, int $K1 = 8, int $K2 = 6, int $K3_output = 1, float $lr = 0.00001, float $err_goal = 0.1, float $mc = 0.7, float $ksi_inc = 1.05, float $ksi_dec = 0.7, float $er = 1.04)
     {
         $this->lr = $lr;
         $this->err_goal = $err_goal;
@@ -77,6 +77,15 @@ class MLP extends NNet
         return $this->y3;
     }
 
+    private function getMinAndMax(array $x): array
+    {   
+        $result = [];
+        foreach($x as $val){
+            $result[] = [min($val), max($val)];
+        }
+        return $result;
+    }
+
     //Funkcja zwraca przewidywane wartosci na podstawie danych wejsciowych
     public function predict(array $x): array
     {
@@ -98,7 +107,7 @@ class MLP extends NNet
             'b2' => $this->b2,
             'w3' => $this->w3,
             'b3' => $this->b3,
-            'x' => $this->x,
+            'x' => $this->getMinAndMax(array_map(null, ...$this->x)),
             'k1' => $this->K1,
             'k2' => $this->K2,
             'k3' => $this->K3,
@@ -121,7 +130,7 @@ class MLP extends NNet
         $this->b2 = $data['b2'];
         $this->w3 = $data['w3'];
         $this->b3 = $data['b3'];
-        $this->x = $data['x'];
+        $this->x = array_map(null, ...$data['x']);
         $this->K1 = $data['k1'];
         $this->K2 = $data['k2'];
         $this->K3 = $data['k3'];
